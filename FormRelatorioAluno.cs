@@ -12,6 +12,7 @@ using ReaLTaiizor.Controls;
 using ReaLTaiizor.Forms;
 using Spire.Pdf;
 using Spire.Pdf.Graphics;
+using Spire.Pdf.Tables;
 
 namespace projeto4
 {
@@ -63,12 +64,22 @@ namespace projeto4
             PdfSection sec = doc.Sections.Add();
             sec.PageSettings.Width = PdfPageSize.A4.Width;
             PdfPageBase page = sec.Pages.Add();
-            float y = 15;
+            int y = 15;
             PdfBrush brush1 = PdfBrushes.Black;
             PdfTrueTypeFont font1 = new PdfTrueTypeFont(new Font("Arial", 16f, FontStyle.Bold));
             PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
 
             page.Canvas.DrawString("Relatório de Alunos", font1, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
+
+            PdfTable table = new PdfTable();
+            table.Style.CellPadding= 2;
+            table.Style.BorderPen = new PdfPen(brush1, 0.75f);
+            table.Style.HeaderStyle.StringFormat = new PdfStringFormat(PdfTextAlignment.Center);
+            table.Style.HeaderSource = PdfHeaderSource.Rows;
+            table.Style.HeaderRowCount = 1;
+            table.Style.ShowHeader= true;
+            table.DataSource = dt;
+            table.Draw(page, new Point(0, y));
 
             doc.SaveToFile("RelatorioAlunos.pdf");
         }

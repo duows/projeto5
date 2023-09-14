@@ -4,6 +4,13 @@ namespace projeto4
 {
     public partial class Principal : MaterialForm
     {
+        bool isOpenAluno = false;
+        bool isOpenProfessor = false;
+        bool isOpenCurso = false;
+        bool isOpenRelatorioAluno = false;
+        bool isOpenRelatorioProfessor = false;
+        bool isOpenRelatorioCurso = false;
+
         public Principal()
         {
             InitializeComponent();
@@ -16,9 +23,13 @@ namespace projeto4
 
         private void cadastroDeAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormAluno formAluno = new FormAluno();
-            formAluno.MdiParent = this;
-            formAluno.Show();
+            if (!isOpenAluno)
+            {
+                FormAluno formAluno = new FormAluno();
+                formAluno.MdiParent = this;
+                isOpenAluno= true;
+                formAluno.Show();
+            }
         }
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
