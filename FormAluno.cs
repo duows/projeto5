@@ -17,6 +17,7 @@ namespace projeto4
     {
         bool isAlteracao = false;
         string cs = @"server=127.0.0.1;" + "uid=root;" + "pwd=;" + "database=academico";//Estou iniciando o banco na string -> string de conexão
+        
         public FormAluno()
         {
             InitializeComponent();
