@@ -244,5 +244,10 @@ namespace projeto4
             limpaCampos();
             txtMatricula.Focus();
         }
+
+        private void FormAluno_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal.isOpenAluno = false;
+        }
     }
 }

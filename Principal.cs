@@ -4,12 +4,12 @@ namespace projeto4
 {
     public partial class Principal : MaterialForm
     {
-        bool isOpenAluno = false;
-        bool isOpenProfessor = false;
-        bool isOpenCurso = false;
-        bool isOpenRelatorioAluno = false;
-        bool isOpenRelatorioProfessor = false;
-        bool isOpenRelatorioCurso = false;
+        public static bool isOpenAluno = false;
+        public static bool isOpenProfessor = false;
+        public static bool isOpenCurso = false;
+        public static bool isOpenRelatorioAluno = false;
+        public static bool isOpenRelatorioProfessor = false;
+        public static bool isOpenRelatorioCurso = false;
 
         public Principal()
         {
@@ -42,16 +42,24 @@ namespace projeto4
 
         private void cadastroDeProfessorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProfessor formProfessor = new FormProfessor();
-            formProfessor.MdiParent = this;
-            formProfessor.Show();
+            if (!isOpenProfessor)
+            {
+                FormProfessor formProfessor = new FormProfessor();
+                formProfessor.MdiParent = this;
+                isOpenProfessor = true;
+                formProfessor.Show();
+            }
         }
 
         private void cadastroCursoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCurso formCurso = new FormCurso();
-            formCurso.MdiParent = this;
-            formCurso.Show();
+            if (!isOpenCurso)
+            {
+                FormCurso formCurso = new FormCurso();
+                formCurso.MdiParent = this;
+                isOpenCurso = true;
+                formCurso.Show();
+            }
         }
 
         
@@ -62,9 +70,13 @@ namespace projeto4
 
         private void alunosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formRelAluno = new FormRelatorioAluno();
-            formRelAluno.MdiParent = this;
-            formRelAluno.Show();
+            if (!isOpenRelatorioAluno)
+            {
+                var formRelAluno = new FormRelatorioAluno();
+                formRelAluno.MdiParent = this;
+                isOpenRelatorioAluno = true;
+                formRelAluno.Show();
+            }
         }
     }
 }

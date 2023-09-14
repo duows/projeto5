@@ -202,5 +202,10 @@ namespace projeto4
         {
 
         }
+
+        private void FormCurso_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal.isOpenCurso= false;
+        }
     }
 }

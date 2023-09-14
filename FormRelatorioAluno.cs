@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,14 +73,20 @@ namespace projeto4
             page.Canvas.DrawString("Relatório de Alunos", font1, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
 
             PdfTable table = new PdfTable();
+
             table.Style.CellPadding= 2;
             table.Style.BorderPen = new PdfPen(brush1, 0.75f);
             table.Style.HeaderStyle.StringFormat = new PdfStringFormat(PdfTextAlignment.Center);
+            table.Style.HeaderSource = PdfHeaderSource.ColumnCaptions;
             table.Style.HeaderSource = PdfHeaderSource.Rows;
-            table.Style.HeaderRowCount = 1;
             table.Style.ShowHeader= true;
+            table.Style.HeaderStyle.BackgroundBrush = PdfBrushes.CadetBlue;
             table.DataSource = dt;
-            table.Draw(page, new Point(0, y));
+            foreach(PdfColumn col in table.Columns)
+            {
+                col.StringFormat = new PdfStringFormat(PdfTextAlignment.Center, PdfVerticalAlignment.Middle);
+            }
+            table.Draw(page, new Point(0, y+30));
 
             doc.SaveToFile("RelatorioAlunos.pdf");
         }
@@ -95,6 +102,23 @@ namespace projeto4
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             MontaRelatorio();
+
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            MontaRelatorio();
+            var p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"RelatorioAlunos.pdf")
+            {
+                UseShellExecute = true,
+            };
+            p.Start();
+        }
+
+        private void FormRelatorioAluno_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal.isOpenRelatorioAluno= false;
         }
     }
 }

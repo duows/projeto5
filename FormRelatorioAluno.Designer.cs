@@ -241,6 +241,7 @@
             this.btnVisualizar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnVisualizar.UseAccentColor = false;
             this.btnVisualizar.UseVisualStyleBackColor = true;
+            this.btnVisualizar.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // FormRelatorioAluno
             // 
@@ -254,6 +255,7 @@
             this.Controls.Add(this.gpb1);
             this.Name = "FormRelatorioAluno";
             this.Text = "Relatório de Alunos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRelatorioAluno_FormClosed);
             this.gpb1.ResumeLayout(false);
             this.gpb2.ResumeLayout(false);
             this.gpb3.ResumeLayout(false);

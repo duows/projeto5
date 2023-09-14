@@ -352,6 +352,7 @@
             this.Name = "FormCurso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Curso";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCurso_FormClosed);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

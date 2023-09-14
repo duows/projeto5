@@ -551,6 +551,7 @@
             this.Name = "FormAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Aluno";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAluno_FormClosed);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
