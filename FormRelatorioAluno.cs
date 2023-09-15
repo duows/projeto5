@@ -102,7 +102,16 @@ namespace projeto4
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             MontaRelatorio();
-
+            var p = new Process();
+            p.StartInfo = new ProcessStartInfo(@"RelatorioAlunos.pdf")
+            {
+                UseShellExecute = true,
+                Verb = "print",
+                CreateNoWindow = true,
+                WindowStyle = ProcessWindowStyle.Hidden,
+                Arguments = "\"" + cboImpressora.Text + "\""
+            };
+            p.Start();
         }
 
         private void btnVisualizar_Click(object sender, EventArgs e)
