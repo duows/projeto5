@@ -176,6 +176,7 @@
             this.cboImpressora.Size = new System.Drawing.Size(421, 49);
             this.cboImpressora.StartIndex = 0;
             this.cboImpressora.TabIndex = 0;
+            this.cboImpressora.SelectedIndexChanged += new System.EventHandler(this.cboImpressora_SelectedIndexChanged);
             // 
             // materialButton1
             // 

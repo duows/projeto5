@@ -23,6 +23,7 @@ namespace projeto4
         public FormRelatorioProfessor()
         {
             InitializeComponent();
+            CarregaImpressoras();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -107,7 +108,8 @@ namespace projeto4
         {
             MontaRelatorio();
 
-            string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioProfessor.pdf";
+            //string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioProfessor.pdf";
+            string pdfFilePath = @"RelatorioProfessor.pdf";
             string imp = cboImpressora.Text;
             if (String.IsNullOrEmpty(imp))
             {
@@ -137,6 +139,11 @@ namespace projeto4
         private void FormRelatorioProfessor_FormClosed(object sender, FormClosedEventArgs e)
         {
             Principal.isOpenRelatorioProfessor = false;
+        }
+
+        private void cboImpressora_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

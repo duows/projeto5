@@ -109,7 +109,7 @@ namespace projeto4
         {
             MontaRelatorio();
           
-            string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioAlunos.pdf";
+            string pdfFilePath = @"RelatorioAlunos.pdf";
             string imp = cboImpressora.Text;
             if (String.IsNullOrEmpty(imp))
             {

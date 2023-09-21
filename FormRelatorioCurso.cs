@@ -24,6 +24,7 @@ namespace projeto4
         public FormRelatorioCurso()
         {
             InitializeComponent();
+            CarregaImpressoras();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -108,7 +109,7 @@ namespace projeto4
         {
             MontaRelatorio();
 
-            string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioCurso.pdf";
+            string pdfFilePath = @"RelatorioCurso.pdf";
             string imp = cboImpressora.Text;
             if (String.IsNullOrEmpty(imp))
             {
