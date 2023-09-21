@@ -223,5 +223,10 @@ namespace projeto4
         {
             Editar();
         }
+
+        private void FormCurso_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+            Principal.isOpenCurso = false;
+        }
     }
 }
