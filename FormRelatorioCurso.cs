@@ -20,19 +20,18 @@ namespace projeto4
 {
     public partial class FormRelatorioCurso : MaterialForm
     {
+        string cs = @"server=localhost;uid=root;pwd=;database=academico";
         public FormRelatorioCurso()
         {
             InitializeComponent();
         }
-
-
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void FormRelatorioAluno_Load(object sender, EventArgs e)
+        private void FormRelatorioCurso_Load(object sender, EventArgs e)
         {
 
         }
@@ -48,28 +47,28 @@ namespace projeto4
         {
             var con = new MySqlConnection(cs);
             con.Open();
-            var sql = "SELECT * FROM aluno WHERE 1 = 1";
+            var sql = "SELECT * FROM curso WHERE 1 = 1";
 
-            if (cboEstado.Text != "")
+            if (cboTipo.Text != "")
             {
-                sql += " and estado = @estado";
+                sql += " and tipo = @tipo";
             }
 
-            if (txtCidade.Text != "")
+            if (txtAno.Text != "")
             {
-                sql += " and cidade = @cidade";
+                sql += " and ano_criado = @ano_criado";
             }
             var sqlAd = new MySqlDataAdapter();
             sqlAd.SelectCommand = new MySqlCommand(sql, con);
 
-            if (cboEstado.Text != "")
+            if (cboTipo.Text != "")
             {
-                sqlAd.SelectCommand.Parameters.AddWithValue("@estado", cboEstado.Text);
+                sqlAd.SelectCommand.Parameters.AddWithValue("@tipo", cboTipo.Text);
             }
 
-            if (txtCidade.Text != "")
+            if (txtAno.Text != "")
             {
-                sqlAd.SelectCommand.Parameters.AddWithValue("@cidade", txtCidade.Text);
+                sqlAd.SelectCommand.Parameters.AddWithValue("@ano_criado", txtAno.Text);
             }
             var dt = new DataTable();
             sqlAd.Fill(dt);
@@ -84,7 +83,7 @@ namespace projeto4
             PdfTrueTypeFont font1 = new PdfTrueTypeFont(new Font("Arial", 16f, FontStyle.Bold));
             PdfStringFormat format1 = new PdfStringFormat(PdfTextAlignment.Center);
 
-            page.Canvas.DrawString("RelatorioAlunos.pdf", font1, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
+            page.Canvas.DrawString("RelatorioCurso.pdf", font1, brush1, page.Canvas.ClientSize.Width / 2, y, format1);
 
             PdfTable table = new PdfTable();
             table.Style.CellPadding = 2;
@@ -102,14 +101,14 @@ namespace projeto4
             table.Draw(page, new Point(0, y + 30));
 
 
-            doc.SaveToFile("RelatorioAlunos.pdf");
+            doc.SaveToFile("RelatorioCurso.pdf");
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             MontaRelatorio();
 
-            string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioAlunos.pdf";
+            string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioCurso.pdf";
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += (sender, e) =>
             {
@@ -130,16 +129,16 @@ namespace projeto4
 
             MontaRelatorio();
             var p = new Process();
-            p.StartInfo = new ProcessStartInfo(@"RelatorioAlunos.pdf")
+            p.StartInfo = new ProcessStartInfo(@"RelatorioCurso.pdf")
             {
                 UseShellExecute = true
             };
             p.Start();
         }
 
-        private void FormRelatorioAluno_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormRelatorioCurso_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Principal.isOpenRelatorioAluno = false;
+            Principal.isOpenRelatorioCurso = false;
         }
     }
 }

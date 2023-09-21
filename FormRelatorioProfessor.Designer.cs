@@ -35,12 +35,17 @@
             this.cboImpressora = new ReaLTaiizor.Controls.MaterialComboBox();
             this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
             this.materialButton2 = new ReaLTaiizor.Controls.MaterialButton();
+            this.cboTitulacao = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.txtAreaFormacao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtAreaFormacao);
+            this.groupBox1.Controls.Add(this.cboTitulacao);
             this.groupBox1.Location = new System.Drawing.Point(19, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(469, 100);
@@ -154,6 +159,64 @@
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
             // 
+            // cboTitulacao
+            // 
+            this.cboTitulacao.AutoResize = false;
+            this.cboTitulacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTitulacao.Depth = 0;
+            this.cboTitulacao.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboTitulacao.DropDownHeight = 174;
+            this.cboTitulacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTitulacao.DropDownWidth = 121;
+            this.cboTitulacao.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboTitulacao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cboTitulacao.FormattingEnabled = true;
+            this.cboTitulacao.IntegralHeight = false;
+            this.cboTitulacao.ItemHeight = 43;
+            this.cboTitulacao.Items.AddRange(new object[] {
+            "Graduação",
+            "Especialização",
+            "Mestrado",
+            "Doutorado"});
+            this.cboTitulacao.Location = new System.Drawing.Point(24, 32);
+            this.cboTitulacao.MaxDropDownItems = 4;
+            this.cboTitulacao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.cboTitulacao.Name = "cboTitulacao";
+            this.cboTitulacao.Size = new System.Drawing.Size(197, 49);
+            this.cboTitulacao.StartIndex = 0;
+            this.cboTitulacao.TabIndex = 0;
+            // 
+            // txtAreaFormacao
+            // 
+            this.txtAreaFormacao.AnimateReadOnly = false;
+            this.txtAreaFormacao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtAreaFormacao.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtAreaFormacao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtAreaFormacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtAreaFormacao.Depth = 0;
+            this.txtAreaFormacao.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAreaFormacao.HideSelection = true;
+            this.txtAreaFormacao.Hint = "Área de formação";
+            this.txtAreaFormacao.LeadingIcon = null;
+            this.txtAreaFormacao.Location = new System.Drawing.Point(227, 33);
+            this.txtAreaFormacao.MaxLength = 32767;
+            this.txtAreaFormacao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.txtAreaFormacao.Name = "txtAreaFormacao";
+            this.txtAreaFormacao.PasswordChar = '\0';
+            this.txtAreaFormacao.PrefixSuffixText = null;
+            this.txtAreaFormacao.ReadOnly = false;
+            this.txtAreaFormacao.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtAreaFormacao.SelectedText = "";
+            this.txtAreaFormacao.SelectionLength = 0;
+            this.txtAreaFormacao.SelectionStart = 0;
+            this.txtAreaFormacao.ShortcutsEnabled = true;
+            this.txtAreaFormacao.Size = new System.Drawing.Size(218, 48);
+            this.txtAreaFormacao.TabIndex = 1;
+            this.txtAreaFormacao.TabStop = false;
+            this.txtAreaFormacao.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtAreaFormacao.TrailingIcon = null;
+            this.txtAreaFormacao.UseSystemPasswordChar = false;
+            // 
             // FormRelatorioProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -167,6 +230,7 @@
             this.Name = "FormRelatorioProfessor";
             this.Text = "Relatório de Professores";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormRelatorioProfessor_FormClosed);
+            this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -183,5 +247,7 @@
         private ReaLTaiizor.Controls.MaterialButton materialButton2;
         private ReaLTaiizor.Controls.MaterialComboBox cboAgrupamento;
         private ReaLTaiizor.Controls.MaterialComboBox cboImpressora;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtAreaFormacao;
+        private ReaLTaiizor.Controls.MaterialComboBox cboTitulacao;
     }
 }

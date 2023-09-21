@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboEstado = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.cboTipo = new ReaLTaiizor.Controls.MaterialComboBox();
             this.txtAno = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cboAgrupamento = new ReaLTaiizor.Controls.MaterialComboBox();
@@ -44,7 +44,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cboEstado);
+            this.groupBox1.Controls.Add(this.cboTipo);
             this.groupBox1.Controls.Add(this.txtAno);
             this.groupBox1.Location = new System.Drawing.Point(21, 91);
             this.groupBox1.Name = "groupBox1";
@@ -53,32 +53,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // cboEstado
+            // cboTipo
             // 
-            this.cboEstado.AutoResize = false;
-            this.cboEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboEstado.Depth = 0;
-            this.cboEstado.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cboEstado.DropDownHeight = 174;
-            this.cboEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEstado.DropDownWidth = 121;
-            this.cboEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cboEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cboEstado.FormattingEnabled = true;
-            this.cboEstado.IntegralHeight = false;
-            this.cboEstado.ItemHeight = 43;
-            this.cboEstado.Items.AddRange(new object[] {
+            this.cboTipo.AutoResize = false;
+            this.cboTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboTipo.Depth = 0;
+            this.cboTipo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboTipo.DropDownHeight = 174;
+            this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipo.DropDownWidth = 121;
+            this.cboTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboTipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cboTipo.FormattingEnabled = true;
+            this.cboTipo.IntegralHeight = false;
+            this.cboTipo.ItemHeight = 43;
+            this.cboTipo.Items.AddRange(new object[] {
             "Técnico",
             "Tecnólogo",
             "Bacharelado",
             "Licenciatura"});
-            this.cboEstado.Location = new System.Drawing.Point(28, 31);
-            this.cboEstado.MaxDropDownItems = 4;
-            this.cboEstado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.cboEstado.Name = "cboEstado";
-            this.cboEstado.Size = new System.Drawing.Size(195, 49);
-            this.cboEstado.StartIndex = 0;
-            this.cboEstado.TabIndex = 0;
+            this.cboTipo.Location = new System.Drawing.Point(28, 31);
+            this.cboTipo.MaxDropDownItems = 4;
+            this.cboTipo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.cboTipo.Name = "cboTipo";
+            this.cboTipo.Size = new System.Drawing.Size(195, 49);
+            this.cboTipo.StartIndex = 0;
+            this.cboTipo.TabIndex = 0;
             // 
             // txtAno
             // 
@@ -207,6 +207,7 @@
             this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // materialButton2
             // 
@@ -227,6 +228,7 @@
             this.materialButton2.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.btnVisualizar_Click);
             // 
             // FormRelatorioCurso
             // 
@@ -255,7 +257,7 @@
         private GroupBox groupBox3;
         private ReaLTaiizor.Controls.MaterialButton materialButton1;
         private ReaLTaiizor.Controls.MaterialButton materialButton2;
-        private ReaLTaiizor.Controls.MaterialComboBox cboEstado;
+        private ReaLTaiizor.Controls.MaterialComboBox cboTipo;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtAno;
         private ReaLTaiizor.Controls.MaterialComboBox cboAgrupamento;
         private ReaLTaiizor.Controls.MaterialComboBox cboImpressora;
