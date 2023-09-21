@@ -276,5 +276,15 @@ namespace projeto4
             tabPage1.Show();
             txtMatricula.Focus();
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Editar();
+        }
     }
 }

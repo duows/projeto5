@@ -218,5 +218,10 @@ namespace projeto4
         {
             Editar();
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Editar();
+        }
     }
 }
