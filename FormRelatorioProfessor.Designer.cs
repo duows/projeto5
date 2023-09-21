@@ -99,6 +99,7 @@
             this.cboTitulacao.IntegralHeight = false;
             this.cboTitulacao.ItemHeight = 43;
             this.cboTitulacao.Items.AddRange(new object[] {
+            "",
             "Graduação",
             "Especialização",
             "Mestrado",

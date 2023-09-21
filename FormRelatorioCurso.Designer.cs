@@ -68,6 +68,7 @@
             this.cboTipo.IntegralHeight = false;
             this.cboTipo.ItemHeight = 43;
             this.cboTipo.Items.AddRange(new object[] {
+            "",
             "Técnico",
             "Tecnólogo",
             "Bacharelado",

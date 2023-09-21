@@ -24,8 +24,6 @@ namespace projeto4
         }
 
 
-
-
         private bool ValidarFormulario()
         {
             if (string.IsNullOrEmpty(txtNome.Text))
