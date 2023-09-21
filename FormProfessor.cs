@@ -229,11 +229,6 @@ namespace projeto4
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            Editar();
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             limpaCampos();
@@ -250,6 +245,36 @@ namespace projeto4
         private void FormProfessor_FormClosed(object sender, FormClosedEventArgs e)
         {
             Principal.isOpenProfessor = false;
+        }
+
+        private void btnExcluir_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (MessageBox.Show("Deseja realmente deletar?", "IFSP", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                    Deletar(id);
+                    CarregaGrid();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Selecione algum aluno!", "IFSP", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            Editar();
+        }
+
+        private void btnNovo_Click_1(object sender, EventArgs e)
+        {
+            limpaCampos();
+            tabPage1.Show();
+            txtMatricula.Focus();
         }
     }
 }

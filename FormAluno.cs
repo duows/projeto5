@@ -234,11 +234,6 @@ namespace projeto4
 
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            Editar();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limpaCampos();
@@ -248,6 +243,30 @@ namespace projeto4
         private void FormAluno_FormClosed(object sender, FormClosedEventArgs e)
         {
             Principal.isOpenAluno = false;
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            if (ValidarFormulario())
+            {
+                Salvar();
+                materialTabControl1.SelectedIndex = 1;//é para mover o tabcontrol 
+            }
+        }
+
+        private void materialTabControl1_Enter(object sender, EventArgs e)
+        {
+            CarregaGrid();
+        }
+
+        private void materialTabControl1_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
+        }
+
+        private void dataGridView1_DoubleClick_1(object sender, EventArgs e)
+        {
+            Editar();
         }
     }
 }

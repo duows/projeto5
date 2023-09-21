@@ -17,5 +17,10 @@ namespace projeto4
         {
             InitializeComponent();
         }
+
+        private void FormRelatorioProfessor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Principal.isOpenRelatorioProfessor = false;
+        }
     }
 }

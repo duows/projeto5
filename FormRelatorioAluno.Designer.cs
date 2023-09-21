@@ -77,8 +77,8 @@
             this.txtCidade.SelectionLength = 0;
             this.txtCidade.SelectionStart = 0;
             this.txtCidade.ShortcutsEnabled = true;
-            this.txtCidade.Size = new System.Drawing.Size(235, 48);
-            this.txtCidade.TabIndex = 6;
+            this.txtCidade.Size = new System.Drawing.Size(265, 48);
+            this.txtCidade.TabIndex = 0;
             this.txtCidade.TabStop = false;
             this.txtCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCidade.TrailingIcon = null;
@@ -127,13 +127,13 @@
             "SP",
             "SE",
             "TO"});
-            this.cboEstado.Location = new System.Drawing.Point(261, 43);
+            this.cboEstado.Location = new System.Drawing.Point(291, 43);
             this.cboEstado.MaxDropDownItems = 4;
             this.cboEstado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.cboEstado.Name = "cboEstado";
             this.cboEstado.Size = new System.Drawing.Size(135, 49);
             this.cboEstado.StartIndex = 0;
-            this.cboEstado.TabIndex = 7;
+            this.cboEstado.TabIndex = 1;
             // 
             // gpb2
             // 
@@ -164,7 +164,7 @@
             this.cboAgrupamento.MaxDropDownItems = 4;
             this.cboAgrupamento.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.cboAgrupamento.Name = "cboAgrupamento";
-            this.cboAgrupamento.Size = new System.Drawing.Size(376, 49);
+            this.cboAgrupamento.Size = new System.Drawing.Size(406, 49);
             this.cboAgrupamento.StartIndex = 0;
             this.cboAgrupamento.TabIndex = 0;
             // 
@@ -197,9 +197,9 @@
             this.cboImpressora.MaxDropDownItems = 4;
             this.cboImpressora.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.cboImpressora.Name = "cboImpressora";
-            this.cboImpressora.Size = new System.Drawing.Size(376, 49);
+            this.cboImpressora.Size = new System.Drawing.Size(406, 49);
             this.cboImpressora.StartIndex = 0;
-            this.cboImpressora.TabIndex = 6;
+            this.cboImpressora.TabIndex = 0;
             // 
             // btnImprimir
             // 
@@ -215,7 +215,7 @@
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnImprimir.Size = new System.Drawing.Size(87, 36);
-            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.TabIndex = 1;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnImprimir.UseAccentColor = false;
@@ -236,7 +236,7 @@
             this.btnVisualizar.Name = "btnVisualizar";
             this.btnVisualizar.NoAccentTextColor = System.Drawing.Color.Empty;
             this.btnVisualizar.Size = new System.Drawing.Size(103, 36);
-            this.btnVisualizar.TabIndex = 7;
+            this.btnVisualizar.TabIndex = 0;
             this.btnVisualizar.Text = "Visualizar";
             this.btnVisualizar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnVisualizar.UseAccentColor = false;

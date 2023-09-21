@@ -78,5 +78,27 @@ namespace projeto4
                 formRelAluno.Show();
             }
         }
+
+        private void professorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isOpenRelatorioProfessor)
+            {
+                var formRelProf = new FormRelatorioProfessor();
+                formRelProf.MdiParent = this;
+                isOpenProfessor = true;
+                formRelProf.Show();
+            }
+        }
+
+        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isOpenRelatorioCurso)
+            {
+                var formRelCurso = new FormRelatorioCurso();
+                formRelCurso.MdiParent = this;
+                isOpenRelatorioCurso = true;
+                formRelCurso.Show();
+            }
+        }
     }
 }

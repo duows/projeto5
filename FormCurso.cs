@@ -213,5 +213,10 @@ namespace projeto4
             Salvar();
             limpaCampos();
         }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            Editar();
+        }
     }
 }
