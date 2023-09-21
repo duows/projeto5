@@ -1,5 +1,5 @@
-
 using ReaLTaiizor.Forms;
+
 namespace projeto4
 {
     public partial class Principal : MaterialForm
@@ -85,7 +85,7 @@ namespace projeto4
             {
                 var formRelProf = new FormRelatorioProfessor();
                 formRelProf.MdiParent = this;
-                isOpenProfessor = true;
+                isOpenRelatorioProfessor = true;
                 formRelProf.Show();
             }
         }
