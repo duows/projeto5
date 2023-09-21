@@ -110,16 +110,17 @@ namespace projeto4
             MontaRelatorio();
           
             string pdfFilePath = @"C:\Users\aluno\source\repos\duows\projeto5\bin\Debug\net6.0-windows\RelatorioAlunos.pdf";
-            PrintDocument printDocument = new PrintDocument();
-            printDocument.PrintPage += (sender, e) =>
+            string imp = cboImpressora.Text;
+            if (String.IsNullOrEmpty(imp))
             {
-                using (FileStream stream = new FileStream(pdfFilePath, FileMode.Open, FileAccess.Read))
-                {
-                    Image pdfImage = Image.FromStream(stream);
-                    e.Graphics.DrawImage(pdfImage, e.PageBounds);
-                }
-            };
-            printDocument.Print();
+                return;
+            }
+
+            PdfDocument doc = new PdfDocument();
+
+            doc.LoadFromFile(pdfFilePath);
+            doc.PrintSettings.PrinterName = imp;
+            doc.Print();
 
         }
 
